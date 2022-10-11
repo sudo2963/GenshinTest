@@ -1,0 +1,25 @@
+server:
+    port: 8112
+spring:
+    datasource:
+        druid:
+            driver-class-name: com.mysql.jdbc.Driver
+            url: jdbc:mysql://124.222.243.49:3306/yuanshen?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+            username: root
+            password: Sdl+alone=99
+            max-active: 60 #连接池配置
+thymeleaf:
+#??????????templates???????
+prefix: classpath:/templates/
+#配置mybaits
+mybatis:
+    mapper-locations: mappers/*.xml
+    type-aliases-package: com.example.demo.domain.entity
+    configuration:
+        map-underscore-to-camel-case: true
+
+mybatis-plus:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #
+    type-aliases-package: com.example.demo.domain.entity
+    mapper-locations: mappers/*.xml
